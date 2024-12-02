@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            padding: 20px;
+            display: block;
+            margin: auto;
+            width: 50%;
+            background-color: #eee;
+        }
+
+        form div {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        form div > input {
+            padding: 10px 12px;
+            width: 200px;
+            border: 1px solid #ccc;
+            outline: none;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>document.formname.name.value </h1>
+
+    <form autocomplete="off" name="myForm" onsubmit="submitHandler(event)">
+        <div>
+            <label for="user">Username</label>
+            <input type="text" name="user" id="user" required>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="dob">DOB</label>
+            <input type="date" name="dob" id="dob" required>
+        </div>
+
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass" required>
+        </div>
+
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+
+    <script>
+            function submitHandler(event) {
+                event.preventDefault(); // avoid the page refresh
+                let fuser = document.myForm.user;
+                let femail = document.myForm.email;
+                let fdob = document.myForm.dob;
+                let fpass = document.myForm.pass;
+
+                let data = {
+                    user: fuser.value,
+                    email: femail.value,
+                    dob: fdob.value,
+                    pass: fpass.value
+                }
+                console.log(`new user = `, data)
+            }
+    </script>
+</body>
+</html>

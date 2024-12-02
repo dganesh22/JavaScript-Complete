@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+
+:root {
+  --family: "Overpass", sans-serif;
+  --bg-1: #e1e1e1;
+  --underline-gradient: linear-gradient(to right bottom, #20bf65, #01baef);
+  --bg-gradient: linear-gradient(to right bottom, #30bf55, #01baef);
+  --txt: #3b3b3b;
+  --mPlus: #222;
+  --mMinus: #ff2022;
+  --bg-income: rgba(0, 200, 0, 0.2);
+  --bg-expense: rgba(222, 0, 0, 0.2);
+  --white: #fff;
+  --dark: #222;
+  --list-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+  --edit: #01baef;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--family);
+}
+
+body {
+  background-color: var(--bg-1);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.heroSection {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0% auto;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0% auto;
+}
+
+.container header {
+  padding: 1.5rem;
+  width: 95%;
+  position: relative;
+}
+
+.container header .title {
+  position: relative;
+  width: max-content;
+}
+
+.container header .title h1 {
+  color: var(--txt);
+}
+
+header .underline {
+  height: 4px;
+  width: 90%;
+  background-image: var(--underline-gradient);
+  border-radius: 90px;
+}
+
+.dashboard,
+.expenseIncomeList {
+  background-image: var(--bg-gradient);
+  width: 60vw;
+  max-width: 60%;
+  margin: 0% auto;
+  padding: 20px;
+  border-radius: 12px;
+  color: var(--white);
+  line-height: 35px;
+  margin-top: 10px;
+  user-select: none;
+}
+
+.dashboard .dashboardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.dashboard #moneyPlus {
+  color: var(--mPlus);
+}
+.dashboard #moneyMinus {
+  color: var(--mMinus);
+}
+
+.dashboard .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .form-item > input {
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  margin: 0px 2px;
+}
+
+.card .form-item .btn {
+  padding: 8px 10px;
+  border: none;
+  color: var(--white);
+  border-radius: 6px;
+  background-color: var(--mMinus);
+  cursor: pointer;
+}
+
+/* expense income list */
+.expenseIncomeList {
+  background-color: var(--white);
+}
+
+.expenseIncomeList p {
+  color: var(--dark);
+}
+
+.expenseIncomeList ul .list-item {
+  list-style: none;
+  background-color: var(--dark);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  margin-top: 1rem;
+}
+
+.list-item .btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+.list-item .btn-group .edit {
+  cursor: pointer;
+  color: var(--edit);
+}
+
+.list-item .btn-group .delete {
+  cursor: pointer;
+  color: var(--mMinus);
+}
+
+@media screen and (max-width: 998px) {
+  .dashboard,
+  .expenseIncomeList {
+    max-width: 80vw;
+  }
+
+  .dashboardTop,
+  .dashboardBottom {
+    text-align: center;
+  }
+
+  .dashboardBottom {
+    flex-direction: column;
+  }
+
+  .dashboard .card {
+    flex-direction: column;
+  }
+
+  .dashboard .card .form-item {
+    margin-top: 1.5rem;
+  }
+}

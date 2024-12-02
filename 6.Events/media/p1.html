@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" width="600" height="500" controls onplay="playHandler()" onpause="pauseHandler()" onvolumechange="volHandler()" onseeking="seekedHandler()" onseeked="seekHandler()"></video>
+
+    <h1 id="status"></h1>
+    <script>
+        let txt = document.getElementById("status")
+
+        function playHandler() {
+            txt.innerText  = "Video is playing" 
+            txt.style.color = "green"
+        }
+
+        function pauseHandler() {
+             txt.innerText  = "Video paused" 
+            txt.style.color = "red"
+        }
+
+        function volHandler() {
+             txt.innerText  = "volume is changing" 
+            txt.style.color = "slateblue"
+        }
+
+        function seekHandler() {
+             txt.innerText  = "Video timing is changing" 
+            txt.style.color = "deeppink"
+        }
+
+        function seekedHandler() {
+             txt.innerText  = "Video timing changed" 
+            txt.style.color = "teal"
+        }
+    </script>
+</body>
+</html>

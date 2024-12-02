@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math table</h1>
+    <form autocomplete="off" onsubmit="handler(event)">
+        <div>
+            <label for="num">Enter Number</label>
+            <input type="number" name="num" id="num" required>
+        </div>
+        <div>
+            <input type="submit" value="Generate">
+        </div>
+    </form>
+    <button onclick="reHandler()" type="button">Reload</button>
+
+    <div id="result"></div>
+
+    <script>
+
+        let result = document.getElementById("result")
+
+        function handler(e) {
+            e.preventDefault();
+        let n = document.getElementById("num").value;
+        let nm = Number(n)
+
+            // 5 x 1 = 5
+            // num symbol [1-10] symbol result
+        for(let i=1; i <= 10; i++) {
+           result.innerHTML += `<h3> ${nm} x ${i} = ${nm * i} </h3>`
+            }
+        }
+
+        function reHandler() {
+            window.location.reload();
+        }
+    </script>
+
+</body>
+</html>

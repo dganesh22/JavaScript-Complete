@@ -1,0 +1,31 @@
+Rules of regular expressions
+
+1. /string/  -> for strings
+
+2. /^expressions$/
+    /^ -> open tag to write regular expressions
+    $/ -> close tag
+
+3. [] -> group of char sets
+
+4. () -> capturing group of multiple char sets
+
+    ex:  [abcdef]  -> input should match atleast single occurrence of any give characters
+
+         [a-z] ->  group of lowercase characters from a to z
+         [A-Z] ->           uppercase
+         [0-9] -> group of decimal numbers 
+          [a-zA-Z]  or [a-z0-9] or [A-Z0-9] or [a-zA-Z0-9] or  [D-S] 
+        
+
+5. Operators of regular expressions
+    a) . -> matches any character except line break /n
+    b) ? -> matches 0 & 1  occurrence of the preceding character, set or group
+    c) * -> matches 0 or 1
+    d) + -> matches 1 or more 
+    e) {n} -> matches exactly n occurrence
+    f) {n,m} -> matches exactly n and m 
+    g) g -> global
+    h) gi -> global case insensitive
+    i) u -> unicode (utf-8 / utf-16)
+    j) y -> sticky

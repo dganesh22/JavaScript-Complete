@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mobile Number</h1>
+
+    <!-- 
+        10 digits
+        9,8,7,6,
+        +91 
+        0
+        91
+    -->
+    <form autocomplete="off">
+        <div>
+            <label for="mobile">Enter mobile</label>
+            <input type="text" name="mobile" id="mobile" onkeyup="handler()" required>
+            <strong id="m-status"></strong>
+        </div>
+
+        <div>
+            <input type="submit" value="Send">
+        </div>
+    </form>
+
+    <script>
+            function handler(e) {
+                let mobile = document.getElementById("mobile").value;
+                let status = document.getElementById("m-status")
+
+                let reg = /^(0|91|\+91|\+91 )?[6-9]\d{9}$/;
+
+                if(mobile == "") {
+                    status.innerText  = "mobile field cann't be empty"
+                    status.style.color= "red"
+                }else {
+                    if(reg.test(mobile)) {
+                         status.innerText  = "valid mobile number"
+                    status.style.color= "green"
+                    } else {
+                        status.innerText = "invalid mobile number"
+                        status.style.color = "red"
+                    }
+                }
+            }
+    </script>
+</body>
+</html>

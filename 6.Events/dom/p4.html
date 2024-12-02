@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ononline="handler()" onoffline="handler1()">
+    <h1>ononline and onoffline </h1>
+
+    <!-- 
+        ononline => trigger the method when system is online
+        onoffline => trigger the method when system is offline
+    -->
+    <script>
+        function handler() {
+                console.log("status is online")
+        }
+        function handler1() {
+                console.log("status is offline")
+        }
+
+        // property
+        console.log(`navigator=`, navigator.onLine)
+    </script>
+</body>
+</html>

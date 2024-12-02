@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>w.a.p to find the armstrong number</h1>
+    <button onclick="find()">Find Armstrong</button>
+    <script>
+        function find() {
+            var x = prompt("Enter your number?")
+            var num = Number(x)
+
+            var temp = num;
+            var sum = 0;
+
+            while(temp > 0) {
+                let rem = temp % 10;
+                sum = sum + (rem ** 3)
+                temp = parseInt(temp / 10)
+            }
+
+            if(sum === num) {
+                document.write(`<h1> ${num} === ${sum} is an armstrong number`)
+            } else {
+                document.write(`<h1>  ${num} !== ${sum} is not an armstrong number </h1>`)
+            }
+        }
+    </script>
+</body>
+</html>

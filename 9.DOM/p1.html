@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>document.write()</h1>
+    <script>
+        document.write(`<h1> Welcome to js </h1>`)
+
+        var x = 123
+        document.write(`<h1> variable x = ${x} </h1>`)
+
+        document.writeln("<h1>welcome to javascript</h1>");
+    </script>
+
+    <script>
+            /* 
+                name = ""
+                email = ""
+                city = ""
+
+                Hi john, my mail id is john@gmail.com and i stay in bengaluru.
+            */
+
+            var name = "john"
+            var email = "john@gmail.com"
+            var city = "bengaluru"
+
+            document.write("Hi " + name + ", my mail id is " + email + " and i stay in " + city + ".")
+
+            document.write(`Hi ${name}, my mail id is ${email} and i stay in ${city}.`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+        <h1>onfocus and onblur</h1>
+
+    <form>
+        <div>
+            <label for="name">Enter name</label>
+            <input type="text" onfocus="handler1()" onblur="handler2()" name="name" id="name" required>
+        </div>
+    </form>
+
+    <script>
+        function handler1() {
+            document.getElementById("name").style.border = "2px solid green"
+        }
+        function handler2() {
+            document.getElementById("name").style.border = "2px solid red"
+        }
+    </script>
+</body>
+</html>

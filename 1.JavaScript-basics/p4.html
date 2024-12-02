@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>variables</h1>
+    <script>
+        // numbers
+        var x = 123;
+        var y = 124.545;
+        var z = -3455.6666677745;
+
+        // string
+        var str = "Hi, we are in javascript";
+        var str1 = 'c';
+        var str2 = `this is backtick`;
+        
+        // boolean
+        var isUser = true; 
+
+        // null and undefined
+        var a = null;
+        var b = undefined;
+
+        // array
+        var colors = [12,44,55,"string",true];
+
+        // object
+        var user = {
+            // key: value => property
+            name: "John",
+            email: "john@gmail.com",
+            age: 22
+        }
+
+        document.write("<h1> z variable ="  +  z + "</h1>");
+        document.write("<h4 style='color:green;'>" +  str +"</h4>");
+        
+        document.write(`<h3> x * y = ${x * y } </h3>`);
+        document.write(`<h3> array = ${colors} </h3>`);
+        document.write(`<h3> object = ${user} </h3>`); // [object Object] direct object cann't destructure on document
+        document.write(`<h3> name = ${user.name} </h3>`); // object.key
+        document.write(`<h3> name = ${user["email"]} </h3>`); // object["key"]
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Validate the username</h1>
+
+    <form autocomplete="off" method="post" onsubmit="submitHandler(event)">
+        <div>
+            <label for="name">Enter name</label>
+            <input type="text" name="name" id="name" required>
+            <strong id="n-status"></strong>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script>
+        var name_status = document.getElementById('n-status')
+
+        function submitHandler(e) {
+            e.preventDefault()
+
+            let inp = document.getElementById("name").value;
+            console.log(`entered name = `, inp)
+
+        // reg exp
+            let reg = /^[A-Za-z ]{3,15}$/;
+
+            if(reg.test(inp)) {
+                name_status.innerText = "valid name"
+                name_status.style.color = "green"
+            } else {
+                name_status.innerText = "invalid name"
+                name_status.style.color = "red"
+            }
+        }
+    </script>
+</body>
+</html>

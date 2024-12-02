@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #blk {
+            padding: 30px;
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>document.getElementById() properties</h1>
+
+    <!-- semantic elements (block elements) div,section,article,main, header,footer, aside, nav -->
+    <button onclick="handler1()">Clickme</button>
+    <!-- target is block element -->
+    <div id="blk"></div>
+
+    <hr>
+    <!-- target is tag itself -->
+    <h1>
+        I'm a <span id="txt"></span>
+    </h1>
+
+    <hr>
+
+    <button id="btn" onclick="handler3()">Login</button>
+
+    <script>
+        function handler1() {
+            document.getElementById('blk').innerHTML = `<div> 
+                        <h1>Sample heading</h1>
+                        <img src="https://picsum.photos/500/500" alt="no pic found" >
+                </div>`
+        }
+
+
+        function handler2() {
+            let title = document.getElementById("txt")
+            let desg = ["FullStack Developer", "Java Developer", "Frontend Developer"]
+            title.innerText = desg[Math.round(Math.random() * 2)]
+        }
+
+        setInterval(handler2,4000)
+
+        function handler3() {
+            let btn = document.getElementById("btn")
+            btn.innerText = `Please wait, user data is validating`;
+            setTimeout(function(){
+                btn.innerText = `Login success`;
+            },5000)
+        }
+    </script>
+</body>
+</html>

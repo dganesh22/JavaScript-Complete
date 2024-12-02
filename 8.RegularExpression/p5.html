@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Email validation</h1>
+    <form autocomplete="off">
+        <div>
+            <label for="email">Enter email id</label>
+            <input type="text" name="email" id="email" onkeyup="handler()" required>
+            <strong id="e-status"></strong>
+        </div>
+
+        <div>
+            <input type="submit" value="Send">
+        </div>
+    </form>
+
+    <script>
+            // username@domain.ext -> string@string.string
+            function handler(e) {
+                let email = document.getElementById("email").value;
+                console.log(`email = `, email)
+
+                let status = document.getElementById("e-status")
+
+                let reg = /^[a-zA-Z0-9_-\S]+@[a-zA-Z0-9_-]+?\.[a-zA-Z]{2,10}$/;
+
+                if(email == "") {
+                    status.innerText = "Email filed cann't be empty"
+                    status.style.color = "red"
+                } else {
+                    if(reg.test(email)) {
+                        status.innerText = "Email is valid"
+                    status.style.color = "green"
+                    } else {
+                        status.innerText = "Invalid Email"
+                    status.style.color = "red"
+                    }
+                }
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --family: "Lato", sans-serif;
+  --bg-nav: #233142;
+  --white: #fff;
+  --warning: #f95959;
+  --dark: #455d7a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--family);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: var(--bg-nav);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0% auto;
+  height: 100%;
+}
+
+.navbar .container .logo {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar .container .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .form-item input {
+  outline: none;
+  padding: 8px 10px;
+  border: none;
+  width: 20vw;
+}
+
+.btn {
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.warning {
+  background-color: var(--warning);
+  color: var(--white);
+}
+
+.recipe-container {
+  margin-top: 5rem;
+}
+
+#recipes {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+}
+
+#recipes .card {
+  width: 100%;
+}
+
+.card .image {
+  max-width: 100%;
+}

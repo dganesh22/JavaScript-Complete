@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+        <h1>onfocusin and onfocusout</h1>
+
+    <form onfocusin="handler1(event)" onfocusout="handler2(event)">
+        <div>
+            <label for="name">Enter name</label>
+            <input type="text"  name="name" id="name" required>
+        </div>
+        <div>
+            <label for="email">Enter email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+    </form>
+
+    <script>
+        function handler1(e) {
+           e.target.style.background = "green"
+        }
+        function handler2(e) {
+             e.target.style.background = "grey"
+        }
+    </script>
+</body>
+</html>

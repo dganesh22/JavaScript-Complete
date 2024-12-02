@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generate the armstrong number </h1>
+    <button onclick="gen()">Generate armstrong</button>
+    <script>
+        function gen() {
+            let i =1 ;
+             while( i < 10) {
+                let j = 0;
+                while(j < 10) {
+                    let k = 0;
+                     while(k < 10) {
+                        let pow = (i ** 3) + (j ** 3) + (k ** 3)
+                        let p = (i * 100 + j* 10 + k)
+
+                        if(pow === p) {
+                            document.write(`<h1> ${p} is an armstrong number </h1>`)
+                        }
+                        k++
+                     }
+                    j++
+                }
+                i++
+             }
+        }
+
+
+        function genfor() {
+            for(let i=1; i< 10; i++) {
+                for(let j=0; j < 10; j++) {
+                    for(let k=0; k < 10; k++) {
+                        let pow = (i ** 3) + (j ** 3) + (k ** 3)
+                        let p = (i * 100 + j* 10 + k)
+
+                        if(pow === p) {
+                            document.write(`<h1> ${p} is an armstrong number </h1>`)
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>document.activeElement</h1>
+
+    <form>
+        <textarea onmouseup="handler(event)" name="msg1" id="msg1" cols="30" rows="6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis voluptate dignissimos ea commodi, velit, culpa molestias ducimus id accusamus fugit itaque doloremque quas explicabo? Optio maxime cumque repellat perspiciatis!
+        </textarea>
+        <hr>
+        <textarea onmouseup="handler(event)" name="msg2" id="msg2" cols="30" rows="6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis voluptate dignissimos ea commodi, velit, culpa molestias ducimus id accusamus fugit itaque doloremque quas explicabo? Optio maxime cumque repellat perspiciatis!
+        </textarea>
+    </form>
+
+
+    <script>
+        function handler() {
+            // target the selected element
+            let s1 = document.activeElement;
+            console.log(`selected element = `, s1)
+
+            // return the complete value
+            let msg = s1.value;
+            console.log(`msg = `, msg)
+
+            // separate the selected txt content
+            let txt = msg.substring(s1.selectionStart,s1.selectionEnd)
+            console.log(`selected text = `, txt)
+
+        }
+    </script>
+</body>
+</html>

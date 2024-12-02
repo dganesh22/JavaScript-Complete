@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>select input</h1>
+    <form method="post" autocomplete="off" onsubmit="submitHandler(event)">
+        <div>
+            <label for="city">Select City</label>
+            <select name="city" id="city">
+                <option value="null">Choose the city</option>
+                <option value="bengaluru">bengaluru</option>
+                <option value="mysore">mysore</option>
+                <option value="hassan">hassan</option>
+                <option value="mangaluru">mangaluru</option>
+                <option value="tumkur">tumkur</option>
+                <option value="kodagu">kodagu</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="msg">Enter message</label>
+            <textarea name="msg" id="msg" cols="30" rows="5" minlength="100" maxlength="200" required></textarea>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <h1 id="out"></h1>
+
+    <div id="msgOut"></div>
+
+    <script>
+        function submitHandler(event) {
+            event.preventDefault();
+            let city = document.getElementById("city")
+            let msg = document.getElementById("msg")
+            let out = document.getElementById("out")
+            let msgOut = document.getElementById("msgOut")
+
+            if(city.value === "null") {
+                out.innerText = `no value selected`
+            } else {
+                out.innerText = `city name is ${city.value}`
+            }
+
+            msgOut.innerHTML = `<p> ${msg.value} </p>`
+        }
+    </script>
+</body>
+</html>

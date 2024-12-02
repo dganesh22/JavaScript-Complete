@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>W.A.P of simple calculator using if and else if  and accept the input through prompt </h1>
+
+    <script>
+        var in1 = prompt("Enter input1?")
+        var in2 = prompt("Enter input2?")
+        var op = prompt("Enter operator?")
+
+        // do convert string to number
+        var x = Number(in1)
+        var y = Number(in2)
+
+        if(op === "+") {
+            console.log("sum =", x + y)
+        } else if (op === "-") {
+            console.log("diff = ", x - y)
+        } else if (op === "*") {
+            console.log("product =", x * y)
+        } else if (op === "/") {
+            console.log("division =", x / y)
+        } else if (op === "%") {
+            console.log("rem =", x % y)
+        } else {
+            console.log("Invalid operator")
+        }
+    </script>
+</body>
+</html>

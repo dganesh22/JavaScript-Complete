@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Radio and check box</h1>
+
+    <form autocomplete="off" onsubmit="submitHandler(event)">
+        <div>
+            <label for="gender">Gender</label> <br>
+            <label>
+                 <input type="radio" name="gender" id="gender" onchange="readHandler(event)" value="male"> Male
+            </label>
+            <label>
+                 <input type="radio" name="gender" id="gender" onchange="readHandler(event)" value="female" checked> Female
+            </label>
+            <label>
+                 <input type="radio" name="gender" id="gender" onchange="readHandler(event)" value="transgender"> Transgender
+            </label>
+        </div>
+            <hr>
+        <div>
+            <label for="lang">Language</label> <br>
+            <label>
+                <input type="checkbox" name="lang" id="lang" value="kannada"> Kannada
+            </label>
+            <label>
+                <input type="checkbox" name="lang" id="lang" value="hindi"> Hindi
+            </label>
+            <label>
+                <input type="checkbox" name="lang" id="lang" value="english"> English
+            </label>
+            <label>
+                <input type="checkbox" name="lang" id="lang" value="tamil"> Tamil
+            </label>
+            <label>
+                <input type="checkbox" name="lang" id="lang" value="telugu"> Telugu
+            </label>
+        </div>
+
+        <div>
+            <input type="submit" value="Send">
+        </div>
+    </form>
+
+    <script>
+        function readHandler(event) {
+             console.log(`event `, event.target)
+             console.log(`value `, event.target.value)
+        }
+
+        function submitHandler(event) {
+            event.preventDefault()
+            let inp = document.querySelectorAll("#lang")
+            console.log(`check =`, inp)
+            let lang = []
+             inp.forEach(item => {
+                if(item.checked) {
+                    console.log(`item`, item.checked)
+                    lang.push(item.value)
+                }
+            })
+             console.log(`data =`, lang)
+        }
+    </script>
+</body>
+</html>

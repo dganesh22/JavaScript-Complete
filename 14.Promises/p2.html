@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            box-sizing: border-box;
+         }
+
+         body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+         }
+
+         #recipes {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+            grid-gap: 10px;
+         }
+
+         #recipes .card {
+            width: 100%;
+         }
+
+         .card .image {
+            max-width: 100%;
+         }
+    </style>
+</head>
+<body>
+    <h1>Access the API through promise constructor</h1>
+
+    <section id="recipes"></section>
+    
+    <script>
+            let URL = "https://dummyjson.com"
+
+        let getData = async () => {
+            await fetch(`${URL}/recipes?limit=10&skip=0`)
+                .then(res => res.json())
+                .then(out => {
+                    console.log(`out =`, out) // server output
+                    printData(out.recipes)
+                }).catch(err => console.log(err.message))
+        }
+
+        getData();
+
+        let recipesEl = document.getElementById("recipes")
+
+        let printData = (data) => {
+            data.forEach(item => {
+                recipesEl.innerHTML += `<div class="card"> 
+                        <img src="${item.image}" class="image" alt="no pic" />
+                        <div class="card-body">
+                            <h4> ${item.name} </h4>
+                        </div>
+                        </div>`
+            });
+        }
+    </script>
+</body>
+</html>

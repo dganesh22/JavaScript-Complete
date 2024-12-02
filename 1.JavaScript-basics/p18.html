@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>W.A.P to find largest of 3 numbers? </h1>
+     <h1>W.A.P to print only even numbers or odd numbers till the input? </h1>
+
+     <button onclick="display()">Execute</button>
+
+     <script>
+            function display() {
+                var num = prompt("Enter Number?")
+            var op = prompt("Enter operator?")
+
+            var x = Number(num)
+
+            if(op === "even") {
+                for(let i=0; i <= x; i++) {
+                    if(i % 2 === 0) {
+                        document.write(`<p>  ${i} </p>`)
+                    }
+                }
+            } else if (op === "odd") {  
+               for(let i=0; i<= x; i++) {
+                if(i % 2 !== 0) {
+                    document.write(`<p>  ${i} </p>`)
+                }
+               }
+            }else {
+                console.log('invalid opearation')
+            }
+            }
+     </script>
+</body>
+</html>

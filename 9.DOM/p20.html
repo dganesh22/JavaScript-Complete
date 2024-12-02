@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM siblings</h1>
+
+    <section>
+        <div>
+            <p>first sample para</p>
+            <p>second sample para</p>
+            <p class="title">third sample para</p>
+            <p>fourth sample para</p>
+            <p>fifth sample para</p>
+        </div>
+    </section>
+
+    <script>
+        let txt = document.querySelector('p');
+        console.log(`first `, txt)
+
+        //parentElement 
+        console.log(txt.parentElement) //div
+        console.log(txt.parentElement.parentElement) // section
+        console.log(txt.parentElement.parentElement.parentElement) // body
+        console.log(txt.parentElement.parentElement.parentElement.parentElement) // html
+        console.log(txt.parentElement.parentElement.parentElement.parentElement.parentElement) // null
+
+        // child element
+        let blk = document.querySelector('div')
+        console.log(blk.children)
+        console.log(blk.children[0])
+        console.log(blk.children[1])
+        console.log(blk.children[2])
+        console.log(blk.children[2].className)
+        console.log(blk.children[3])
+        console.log(blk.children[3].textContent)
+
+
+        console.log(`\n`)
+
+        // nextElementSibling
+        console.log( `nextElementSibling=`, txt.nextElementSibling)
+        console.log( `nextElementSibling=`, txt.nextElementSibling.nextElementSibling)
+        console.log( `nextElementSibling=`, txt.nextElementSibling.nextElementSibling.nextElementSibling)
+
+        console.log(`\n`)
+        // previousElementSibling
+        let txt1 = document.querySelector(".title")
+        console.log(`prev=`, txt1.previousElementSibling)
+        console.log(`prev=`, txt1.previousElementSibling.previousElementSibling)
+    </script>
+</body>
+</html>

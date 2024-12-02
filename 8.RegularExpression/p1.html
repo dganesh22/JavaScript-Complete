@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>test() method</h1>
+    <button onclick="handler()">Test</button>
+    <script>
+         function handler() {
+            var inp = prompt("Enter your input?")
+            // var reg = /[abc]/; // only abc
+            // var reg = /[a-z]/; // lowrecase a to z only 
+           // var reg = /[0-9]/; // numbers
+            var reg = /[]/; // lower upper numbers
+
+            if(reg.test(inp)) {
+                console.log(`matched`)
+            } else {
+                console.log(`not matched`)
+            }
+         }
+    </script>
+</body>
+</html>

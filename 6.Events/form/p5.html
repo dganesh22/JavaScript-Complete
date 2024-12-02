@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>onchange on radio</h1>
+    <form>
+        <div>
+            <label for="gender">Select your Input</label>
+            <input type="radio" name="gender" id="gender" value="male"> Male
+            <input type="radio" name="gender" id="gender" value="female"> FeMale
+            <input type="radio" name="gender" id="gender" value="tranasgender"> Transgender
+        </div>
+
+        <div>
+            <label for="lang">Language</label>
+            <input type="checkbox" name="lang" id="lang" value="kannada">
+        </div>
+
+        <div>
+            <label for="date">Date</label>
+            <input type="date" name="myDate" id="myDate" onchange="dateHandler(event)">
+        </div>
+    </form>
+
+
+    <script>
+        document.addEventListener('change',function(event){
+            if(event.target.checked) {
+                console.log(`target value = `, event.target.value)
+            }
+        })
+
+        function dateHandler(e) {
+            console.log(`mydate = `, e.target.value)
+        }
+    </script>
+</body>
+</html>

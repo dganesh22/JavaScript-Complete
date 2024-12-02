@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Aptos&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Aptos", sans-serif;
+  overflow-x: hidden;
+  background-color: teal;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+}
+
+.context-menu {
+  width: 200px;
+  background-color: #222;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.cls {
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 4px;
+  top: 2px;
+}
+
+ul li {
+  list-style: none;
+  padding: 10px 12px;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.context-menu.active {
+  visibility: visible;
+}

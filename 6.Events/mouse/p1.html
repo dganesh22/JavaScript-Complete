@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            border:2px solid #222;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>mouse events</h1>
+    <!-- 
+        onmousemove
+
+        onmouseover
+        onmouseout
+ 
+        onmouseenter
+        onmouseleave
+
+        onmouseup
+        onmousedown
+        
+        onmousewheel (deprecated)
+    -->
+        <div class="container" onmouseenter="handler1()" onmouseleave="handler2()">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eligendi deserunt minima suscipit officia ipsa omnis similique? Sequi ipsum quis rem quaerat nihil, magni saepe ex? Velit dolore repellat est?</p>
+        </div>
+
+        <script>
+             function handler1() {
+                document.querySelector(".container").style.background = "teal"
+             }
+             function handler2() {
+                document.querySelector(".container").style.background = "slateblue"
+             }
+        </script>
+</body>
+</html>

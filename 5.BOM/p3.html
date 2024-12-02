@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Open(path/url) and Close</h1>
+
+    <!-- browser => new tab, new window -->
+
+    <button onclick="getTab()">Open tab</button>
+    <button onclick="getWindow()">Open Window</button>
+    <button onclick="closeBom()">close</button>
+
+    <script>
+        let ins = null;
+
+         function getTab() {
+            //  open("https://flipkart.com")
+            ins = open("p1.html")
+         }
+
+         function getWindow() {
+            // open(path/url,title,properties)
+           ins =  open("https://amazon.in","amazon window","width=400;height=400")
+         }
+
+         function closeBom() {
+            ins.close()
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>document.querySelector(.class)</h1>
+        <button onclick="handler()">click</button>
+    <section class="card"></section>
+    <section class="card"></section>
+    <section class="card"></section>
+    <section class="card"></section>
+    <section class="card"></section>
+
+    <script>
+        function handler() {
+            let card = document.querySelectorAll(".card")
+            card.forEach(item => {
+                item.style.background = "red"
+            })
+        }
+    </script>
+</body>
+</html>

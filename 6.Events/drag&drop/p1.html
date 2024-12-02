@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #dragElement {
+            cursor: move;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+            background-color: teal;
+         }
+
+         #dropArea {
+            border:1px solid #ccc;
+            padding: 20px;
+            width: 500px;
+            height: 200px;
+         }
+    </style>
+</head>
+<body>
+     <h1>drag and drop</h1>
+
+     <div id="dragElement" draggable="true" ondragstart="dragStartHandler(event)">
+        Drag Me
+     </div>
+
+     <hr>
+
+     <div id="dropArea" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)" >Drop Here</div>
+
+     <script>
+         function dragStartHandler(e) {
+                // add the target element's id to the data transfer of the object
+                e.dataTransfer.setData("application/my-app", e.target.id)
+                e.dataTransfer.effectAllowed = "move";
+         }
+
+
+         // after drag when data is over the drop area 
+         function dragoverHandler(e) {
+                e.preventDefault()
+                e.dataTransfer.dropEffect = "move";
+         }
+
+         // on drop
+         function dropHandler(e) {
+            e.preventDefault();
+            let data = e.dataTransfer.getData("application/my-app")
+            e.target.appendChild(document.getElementById(data))
+         }
+
+     </script>
+</body>
+</html>
